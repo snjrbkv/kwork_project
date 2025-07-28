@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Raleway";
+  font-weight: normal;
+  color: #ffffffbf;
+  background-color: #0a0a0a;
+}
+.container {
+  min-height: 100vh;
+  max-width: 1540px;
+  overflow-x: hidden;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10%;
+  padding: 0 3%;
+}
+.info {
+  width: 40%;
+  position: relative;
+  z-index: 999;
+  background-color: #0a0a0a;
+}
+.info-title {
+  font-size: 32px;
+  font-weight: normal;
+}
+.info-text {
+  margin: 25px 0;
+  font-size: 18px;
+}
+.drop-down-btns {
+  width: 100%;
+  display: flex;
+}
+.drop-down-btn {
+  font-size: 14px;
+  width: 45%;
+  border: 2px solid #2d2d2d;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.reset {
+  border: 2px solid #2d2d2d;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+.search {
+  margin-top: 12px;
+  width: 100%;
+  padding: 20px;
+  border: 2px solid #886859;
+  background-color: transparent;
+  color: #d3a188;
+}
+.arrow {
+  display: block;
+}
+.drop-downs {
+  display: flex;
+  width: 100%;
+}
+.dorp-down {
+  width: 100%;
+  height: 290px;
+  overflow-y: scroll;
+  background-color: #010101;
+  color: #fff;
+  outline-color: #333;
+  outline-style: solid;
+  outline-width: 1px;
+  overflow: auto;
+  pointer-events: auto;
+  padding: 0 10px;
+}
+
+.drop-down__drops {
+  font-size: 14px;
+  margin: 20px 0;
+  cursor: pointer;
+}
+/* Плавное появление дропа */
+.dropdown-wrapper {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+.dropdown-wrapper.open {
+  max-height: 300px;
+  width: 100%;
+  opacity: 1;
+}
+
+/* Анимация стрелки */
+.arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.arrow.rotate {
+  transform: rotate(180deg);
+}
+/* scroll bar */
+/* Красивый скроллбар для всей страницы */
+body,
+.dorp-down {
+  scrollbar-width: thin;
+  scrollbar-color: #c1c1c1 transparent;
+}
+
+/* Для Chrome, Edge, Safari */
+body::-webkit-scrollbar,
+.dorp-down::-webkit-scrollbar {
+  width: 6px;
+}
+
+body::-webkit-scrollbar-thumb,
+.dorp-down::-webkit-scrollbar-thumb {
+  background-color: #c1c1c1;
+}
+
+body::-webkit-scrollbar-track,
+.dorp-down::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Чтобы dropdown сам стал прокручиваемым при необходимости */
+.dorp-down {
+  max-height: 200px;
+  overflow-y: auto;
+}
+body::-webkit-scrollbar-button,
+.dorp-down::-webkit-scrollbar-button {
+  display: none;
+  height: 0;
+  width: 0;
+}
+.slider-cards {
+  height: 100%;
+  width: 65%;
+  position: relative;
+}
+
+/* .... */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
+.modal {
+  background: #fff;
+  width: 35%;
+  max-width: 90%;
+  height: 100%;
+  padding: 24px;
+  box-shadow: 2px 0 20px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.4s ease forwards;
+  overflow-y: auto;
+  color: #000;
+  position: relative;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  font-size: 24px;
+  z-index: 9999;
+  border: none;
+  cursor: pointer;
+}
+
+.modal img.modal-photo {
+  width: auto;
+  height: 400px;
+  border-radius: 8px;
+}
+
+.modal-description {
+  margin: 12px 0;
+  color: #444;
+}
+.modal h2 {
+}
+.modal p {
+  margin: 5px 0;
+}
+.modal video {
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 1020px) {
+  .container {
+    flex-direction: column;
+    padding: 3%;
+  }
+  .info {
+    width: 100%;
+  }
+  .slider-cards {
+    margin-top: 10%;
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+  .modal {
+    width: 100%;
+  }
+}
