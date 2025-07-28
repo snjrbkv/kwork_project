@@ -13,7 +13,7 @@
   box-sizing: border-box;
 }
 .team-card {
-  width: 40%;
+  width: 55%;
   position: relative;
   color: #fff;
   text-align: center;
@@ -63,13 +63,13 @@
   }
 }
 .pagination-next {
+  
   svg {
   }
 }
 
 @media only screen and (max-width: 1200px) {
   .team-card {
-    width: 50%;
     position: relative;
     color: #fff;
     text-align: center;
@@ -85,6 +85,14 @@
   }
 }
 @media only screen and (max-width: 800px) {
+  .team-card {
+    width: 60%;
+    position: relative;
+    color: #fff;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 500px) {
   .team-card {
     width: 70%;
     position: relative;

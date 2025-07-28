@@ -247,6 +247,7 @@ const App = () => {
               grabCursor={true}
               centeredSlides={true}
               loop={true}
+              loopAdditionalSlides={2}
               navigation={{
                 nextEl: ".pagination-next",
                 prevEl: ".pagination-prev",
@@ -255,7 +256,7 @@ const App = () => {
               className="team-swiper"
               breakpoints={{
                 320: {
-                  slidesPerView: 1,
+                  slidesPerView: "auto",
                   coverflowEffect: {
                     rotate: 0,
                     stretch: 100,
@@ -265,7 +266,7 @@ const App = () => {
                   spaceBetween: -100,
                 },
                 768: {
-                  slidesPerView: 1,
+                  slidesPerView: "auto",
                   coverflowEffect: {
                     rotate: 5,
                     stretch: 200,
@@ -275,14 +276,14 @@ const App = () => {
                   spaceBetween: -200,
                 },
                 1024: {
-                  slidesPerView: 1,
+                  slidesPerView: "auto",
                   coverflowEffect: {
                     rotate: 10,
-                    stretch: 400,
+                    stretch: 300,
                     depth: 100,
                     modifier: 1,
                   },
-                  spaceBetween: -400,
+                  spaceBetween: -300,
                 },
               }}
             >
@@ -304,6 +305,7 @@ const App = () => {
                 </SwiperSlide>
               ))}
             </Swiper>
+
             <div className="paginations">
               <div className="pagination-btn pagination-prev">
                 <svg
